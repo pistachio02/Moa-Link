@@ -1,7 +1,7 @@
 ---
 name: Issue Task Card
 about: Issue Task Card
-title: "[예시-client]dev/url 서버연결(...)"
+title: "[Task]이름/할 일"
 labels: ''
 assignees: ''
 
