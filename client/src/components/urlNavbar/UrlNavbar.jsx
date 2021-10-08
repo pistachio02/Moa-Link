@@ -9,6 +9,8 @@ import * as GiIcons from 'react-icons/gi'
 export const UrlNavbar= memo(() => {
   return (
     
+
+    
     <Sidebar>
         {/* 여기는 sidebar 입니다 ! 딱히 수정 할 부분은 없을 것 같지만 혹여나 있다면 말씀해주세요 ! ㅎㅎ */}
       <MenuList>
