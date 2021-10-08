@@ -1,9 +1,9 @@
 import './App.css';
 import {Route, Switch } from 'react-router-dom'
-import LandingPage from './pages/Landingpage'
+import LandingPage from './pages/LandingPage'
 import LogIn from './pages/Login';
 import SignUp from './pages/Signup';
-import UrlPage from './pages/Urlpage';
+import UrlPage from './pages/UrlPage';
 
 
 function App() {
