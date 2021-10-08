@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../components/common/header/header'
+import UrlNavbar from '../components/urlNavbar/UrlNavbar'
 
 function UrlPage() {
     return (
         <div>
             <Header />
-            <p>Url 페이지입니당!!!</p>
+            <UrlNavbar/>
         </div>
     )
 }
