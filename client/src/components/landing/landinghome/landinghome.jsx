@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../common/header/header'
+import Header from '../../common/header/Header'
 // import Landing_part1 from '../landing-part1/landing-part1'
 // import Landing_part2 from '../landing-part2/landing-part2'
 // import Landing_part3 from '../landing-part3/landing-part3'
