@@ -5,7 +5,7 @@ function UrlPage() {
     return (
         <div>
             <Header />
-            <p>Url 페이지입니당!!</p>
+            <p>Url 페이지입니당!!!</p>
         </div>
     )
 }
