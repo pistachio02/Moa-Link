@@ -17,8 +17,8 @@ function Header({ userinfo, handleLogout }) {
             <div className="header-container">
             <Link to="/" className="logo"><img src={logo} alt="logo"/></Link>
             <div className="grow"></div>
-            <Link to="/UrlPage" className="header-flex-box url">Url Service</Link>
-              <div className="header-flex-box">Wellcom! {userinfo.username} 님</div>
+            <Link to="/UrlPage" className="header-flex-box">Url Service</Link>
+              <div className="header-flex-box">Wellcome! {userinfo.username} 님</div>
               <div className="header-flex-box-logout" onClick={handleLogout}>Logout</div>
             </div>
           </div>
