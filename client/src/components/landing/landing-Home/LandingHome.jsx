@@ -8,10 +8,10 @@ import LandingPart4 from '../landing-part4/LandingPart4'
 import LandingPart5 from '../landing-part5/LandingPart5'
 
 
-function LandingHome() {
+function LandingHome({userinfo, handleLogout}) {
     return (
         <div>
-            <Header />
+            <Header userinfo={userinfo} handleLogout={handleLogout} />
             <LandingPart1 />
             <LandingPart2 />
             <LandingPart3 />
