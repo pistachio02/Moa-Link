@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LandingHome from '../components/landing/landing-Home/Landing-Home'
+import LandingHome from '../components/landing/landing-Home/LandingHome'
 
 function Landing() {
     return (
