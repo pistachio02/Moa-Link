@@ -12,7 +12,7 @@ function Footer() {
                 </div>
                 <div className="footer-grow"></div>
                 <a className="footer-link" href="https://github.com/codestates/Moa-Link/wiki"> | Wiki</a>
-                <a className="footer-link" href="https://github.com/codestates/Moa-Link/wiki"> | Clinet</a>
+                <a className="footer-link" href="https://github.com/codestates/Moa-Link/wiki"> | Client</a>
                 <a className="footer-link" href="https://github.com/codestates/Moa-Link/wiki"> | Server</a>
             </div>
         </div>
