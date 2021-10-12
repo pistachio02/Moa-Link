@@ -28,3 +28,18 @@
 .grow{
     flex-grow: 10
 }
+
+/** 로그아웃 **/
+.header-flex-box-logout{
+    background-color: #d3dff9;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.header-flex-box-logout:hover{
+    background-color: #1E3BA8;
+    color: white;
+    font-weight: 600;
+}

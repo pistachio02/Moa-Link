@@ -1,0 +1,109 @@
+input:hover {
+    box-shadow: 0 0 5pt 0.5pt #eeeded;
+}
+
+input:focus {
+    box-shadow: 0 0 5pt 1pt #e2e4e0;
+    outline-width: 0px;
+  }
+
+
+  .signin {
+    /* margintop: 0px; */
+    padding: 150px 0 150px;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .signin h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .signin__card {
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 6px;
+    background-color: #fafaf7;
+    box-shadow: 2px 2px 20px rgba(0,0,0,.3);
+    color: #555;
+  }
+  .signin__card h2 {
+    padding: 30px;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  .signin__card h2 strong {
+    font-weight: 700;
+    color: #070346;
+  }
+  .signin__card form {
+    padding: 30px 22px;
+  }
+  .signin__card form input {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .signin__card form [type="button"] {
+    background-color: #142b6b;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 15px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+
+  }
+
+  .signin__card form [type="button"]:hover {
+    background-color: #38b5db;
+  }
+
+
+  .signin__card p {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    line-height: normal;
+  }
+  .signin__card .actions {
+    display: flex;
+    border-top: 1px solid #ddd;
+  } 
+  .signin__card .actions a {
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+    font-size: 14px;
+    border-right: 1px solid #ddd;
+  }
+  .signin__card .actions a:last-child {
+    border-right: none;
+  } 
+
+
+  .signin__card .actions a:hover {
+    text-decoration: underline;
+  }
