@@ -1,11 +1,15 @@
 import React from 'react'
-import Header from '../components/common/header/Header'
+import LandingHome from '../components/landing/landing-Home/LandingHome'
+import LoginModal from '../components/login/LoginModal'
 
-function Login() {
+function Login({isLogin, handleResponseSuccess}) {
     return (
         <div>
-            <Header />
-            <p>로그인 페이지입니당!!</p>
+            <LandingHome />
+            <LoginModal 
+            isLogin={isLogin}
+            handleResponseSuccess={handleResponseSuccess}
+            />       
         </div>
     )
 }

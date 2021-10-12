@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from '../components/common/header/Header'
+import LandingHome from '../components/landing/landing-Home/LandingHome'
+import SignModel from '../components/sign/SignModel'
 
 function Signup() {
     return (
         <div>
-            <Header />
-            <p>회원가입 페이지입니당!!</p>
+            <LandingHome />
+            <SignModel />
         </div>
     )
 }

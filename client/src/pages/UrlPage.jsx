@@ -2,10 +2,10 @@ import React from 'react'
 import Header from '../components/common/header/Header'
 import UrlNavbar from '../components/urlNavbar/UrlNavbar'
 
-function UrlPage() {
+function UrlPage({userinfo, handleLogout}) {
     return (
         <div>
-            <Header />
+            <Header userinfo={userinfo} handleLogout={handleLogout}/>
             <UrlNavbar/>
         </div>
     )

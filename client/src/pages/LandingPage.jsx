@@ -2,10 +2,10 @@ import React from 'react'
 
 import LandingHome from '../components/landing/landing-Home/LandingHome'
 
-function Landing() {
+function Landing({userinfo, handleLogout}) {
     return (
         <div>
-            <LandingHome />
+            <LandingHome userinfo={userinfo} handleLogout={handleLogout}/>
         </div>
     )
 }
