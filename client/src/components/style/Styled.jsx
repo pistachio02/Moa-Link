@@ -245,3 +245,49 @@ export const ModalView = styled.div.attrs(props => ({
    }
     
 `;
+
+export const PrivateTextInputArea = styled.input.attrs(props => ({
+  // attrs 메소드를 이용해서 아래와 같이 div 엘리먼트에 속성을 추가할 수 있습니다.
+  type: 'password',
+}))`
+margin-left: 142px;
+border-top: none;
+border-left: none;
+border-right: none;
+height: 35px;
+width: 200px;
+border-bottom: {
+    opacity: 20%;
+};
+`
+
+export const PrivateUrlPlusButton = styled.button`
+    padding: 13px;
+    width: 70px;
+    opacity: 40%;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    border-width: 1px;
+    margin-left: 40px;
+
+ &:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 4px rgba(0, 0, 0, 0.2);
+    transition: all;
+}
+`
+
+export const PrivateModalView = styled.div.attrs(props => ({
+  // attrs 메소드를 이용해서 아래와 같이 div 엘리먼트에 속성을 추가할 수 있습니다.
+  role: 'dialog'
+}))`
+    border-radius: 10px;
+    background-color: #fff;
+    width: 700px;
+    height: 700px;
+
+    .lock-icon{
+      font-size: 500px;
+      margin-left: 40px;
+    }
+`;

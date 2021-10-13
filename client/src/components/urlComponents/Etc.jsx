@@ -25,19 +25,19 @@ function Etc() {
         }
     }
   
-    useEffect(() => {
-            const fetchData = async () => {
-                try {
-                    const response = await axios.get('https://localhost:4000/etc')
-                    const url = response.data.data
-                    setUrlList(url)
-                } catch (error) {
-                    throw error;
-                }
-            }
-            fetchData()
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('https://localhost:4000/etc')
+            const url = response.data.data
+            setUrlList(url)
+        } catch (error) {
+            throw error;
         }
-    )
+    }
+
+    useEffect(() =>{
+        fetchData()
+    },[fetchData])
   
     const editCard = () => {
       setEdit(!edit)
@@ -46,24 +46,23 @@ function Etc() {
     return (
         <div>
             <UrlComponentWrap>
-            {urlList.map((el) => (
-                  <Card>
-                  <div className = 'icons'>
-                    <BiIcons.BiTrash className = 'trash' key={el.id} onClick = {() => deleteHandler(el.id)}/>
-                    <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
-                  </div>
-                  <div>{el.title}</div>
+            {
+            urlList !== undefined &&
+
+            urlList.map((el) => (
+
+              <Card>
+              <div className = 'icons'>
+              <BiIcons.BiTrash className = 'trash' key={el.id} onClick = {() => deleteHandler(el.id)}/>
+              <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
+              </div>
+              <div>{el.title}</div>
                   <div>{el.description}</div>
                   <a href = {el.url}>Url</a>
-                 
+
                  </Card>
                 ))}
-            <Card>
-                <div className = 'icons'>
-                    <BiIcons.BiTrash className = 'trash' onClick = {deleteHandler}/>
-                    <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
-                </div>
-            </Card>
+            
         </UrlComponentWrap>
       {edit && 
       <ModalContainer>

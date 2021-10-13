@@ -42,7 +42,8 @@ export const Modal = ({isOpen, setIsOpen, openModalHandler}) => {
         category : isSelected,
       })
       if(isEmpty()){
-        alert('등록되었습니다.')
+        alert('등록되었습니다.');
+        openModalHandler()
       }
 
     } catch (err) {

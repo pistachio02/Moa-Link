@@ -33,7 +33,18 @@ module.exports = async (req, res) => {
 
     if(!accessTokenData) {
         res.status(401).send({ data: null, message: 'not authorized' });
-    } else {
+    } else if(categoryId === 6) {
+        const newUrl = await Url.create({ 
+            url: url,
+            title: title,
+            description: description,
+            categoryId: categoryId,
+            allUrlId: 2,
+            userId: userId
+        })
+        res.status(201).json({ data: newUrl, message: "Successfully Added!" })
+    }
+    else {
         const newUrl = await Url.create({ 
             url: url,
             title: title,

@@ -21,11 +21,11 @@ module.exports = async (req, res) => {
         });
         const accessToken = generateAccessToken(newUser.dataValues);
         res
-            .cookie("accessToken", accessToken, {
-                httpOnly: true,
-                secure: true,
-                sameSite: "none",
-            })
+            // .cookie("accessToken", accessToken, {
+            //     httpOnly: true,
+            //     secure: true,
+            //     sameSite: "none",
+            // })
            .status(201)
            .json({ message: "Successfully Signed Up!" })
     } else {

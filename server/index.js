@@ -39,7 +39,7 @@ app.get('/shopping', controller.shopping);
 app.get('/works', controller.works);
 app.get('/music', controller.music);
 app.get('/etc', controller.etc);
-app.get('/private', controller.private);
+app.post('/private', controller.private);
 
 app.post('/addurl', controller.addUrl);
 app.put('/updateurl', controller.updateUrl);
