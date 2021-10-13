@@ -90,10 +90,9 @@ function LandingPart3() {
             <Container1>
       <Card>
         <Contents>
-          <Title>모아링크!</Title>
+          <Title>Share your URL</Title>
           <P>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius optio nisi reprehenderit error culpa amet
-            incidunt architecto numquam ad at dolorem odit maxime vel dolor mollitia sapiente, aperiam, quo quae?
+          You can manage frequently used websites and share URLs with people you know. Share the URL with your friends on Moalink!
           </P>
           <ReadMoreButton href="#">Read More</ReadMoreButton>
         </Contents>
@@ -101,10 +100,9 @@ function LandingPart3() {
 
       <Card>
         <Contents>
-          <Title>모아링크2</Title>
+          <Title>Shorten Url</Title>
           <P>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius optio nisi reprehenderit error culpa amet
-            incidunt architecto numquam ad at dolorem odit maxime vel dolor mollitia sapiente, aperiam, quo quae?
+          Have you ever felt inconvenient to organize your URLs because they are long? Moalink also has a function to shorten URL addresses. Try shortening the URL length!
           </P>
           <ReadMoreButton href="#">Read More</ReadMoreButton>
         </Contents>
@@ -112,10 +110,9 @@ function LandingPart3() {
 
       <Card>
         <Contents>
-          <Title>모이링크3</Title>
+          <Title>Manage your URLs</Title>
           <P>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius optio nisi reprehenderit error culpa amet
-            incidunt architecto numquam ad at dolorem odit maxime vel dolor mollitia sapiente, aperiam, quo quae?
+          Moalink manages URLs by category and lets you add any URL you want! Manage your URLs in Moalink!
           </P>
           <ReadMoreButton href="#">Read More</ReadMoreButton>
         </Contents>
