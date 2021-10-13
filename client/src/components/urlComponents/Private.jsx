@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import {TextArea, TextInputArea, TextAreaWrap, ButtonWrap,  CancleButton, SubmitButton, ModalBackdrop, ModalContainer, ModalView,Card, CardModalView, CancleButtonCard, ButtonWrapCard, SubmitButtonCard, UrlPlusButton, UrlComponentWrap } from '../style/Styled'
+import {TextArea, TextInputArea, TextAreaWrap, ButtonWrap,  CancleButton, SubmitButton, ModalBackdrop, ModalContainer, ModalView,Card, PrivateModalView, PrivateTextInputArea, PrivateUrlPlusButton, UrlComponentWrap } from '../style/Styled'
 import * as BsIcons from 'react-icons/bs'
 import logo from '../../img/moalink.png'
 import * as BiIcons from 'react-icons/bi'
 import PlusButton from '../urlCardModalDev/PlusButton'
 import { useParams } from 'react-router';
 import axios from 'axios';
+import * as AiIcons from 'react-icons/ai'
 
 function Private() {
     const [link, setLink] = useState('')
@@ -15,29 +16,41 @@ function Private() {
     const [isDelete, setIsDelete] = useState(false)
     const [urlList, setUrlList] =useState([]);
     const {id, categoryId} = useParams()
+    const [isPassword, setIsPassword] = useState('')
+    const [isAccept, setIsAccept] = useState(false)
   
-    
+    const passWordHandler = (e) => {
+        setIsPassword(e.target.value)
+      }
+
+    const trueOrFalse= async () => {
+        try {
+            const response = await axios.post('https://localhost:4000/private', { userPassword: isPassword })
+            const url = response.data.data;
+            const isValid = response.data.isValid;
+            setUrlList(url);
+            console.log(response)
+            if(isValid === "true") {
+                setIsAccept(true);
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+
     const deleteHandler = async (id) => {
         try {
             await axios.post('https://localhost:4000/deleteurl', { id : id })
+            .then(async () => {
+              const response = await axios.post('https://localhost:4000/private', { userPassword: isPassword })
+            const url = response.data.data;
+            setUrlList(url);
+            })
         } catch (error) {
             throw error;
         }
     }
   
-    useEffect(() => {
-            const fetchData = async () => {
-                try {
-                    const response = await axios.get('https://localhost:4000/private')
-                    const url = response.data.data
-                    setUrlList(url)
-                } catch (error) {
-                    throw error;
-                }
-            }
-            fetchData()
-        }
-    )
   
     const editCard = () => {
       setEdit(!edit)
@@ -45,26 +58,40 @@ function Private() {
 
     return (
         <div>
-            <UrlComponentWrap>
-            {urlList.map((el) => (
-                  <Card>
-                  <div className = 'icons'>
-                    <BiIcons.BiTrash className = 'trash' key={el.id} onClick = {() => deleteHandler(el.id)}/>
-                    <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
-                  </div>
-                  <div>{el.title}</div>
+            { isAccept ?    <UrlComponentWrap>
+                {
+            urlList !== undefined &&
+
+            urlList.map((el) => (
+
+              <Card>
+              <div className = 'icons'>
+              <BiIcons.BiTrash className = 'trash' key={el.id} onClick = {() => deleteHandler(el.id)}/>
+              <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
+              </div>
+              <div>{el.title}</div>
                   <div>{el.description}</div>
                   <a href = {el.url}>Url</a>
-                 
+
                  </Card>
                 ))}
-            <Card>
-                <div className = 'icons'>
-                    <BiIcons.BiTrash className = 'trash' onClick = {deleteHandler}/>
-                    <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
-                </div>
-            </Card>
+            
         </UrlComponentWrap>
+        :
+        <div>
+         <PrivateModalView>
+             <AiIcons.AiFillLock className = "lock-icon"/>
+             <div className = 'private'>
+             <PrivateTextInputArea placeholder = "사용자의 비밀번호를 입력해주세요" value = {isPassword} onChange = {passWordHandler} ></PrivateTextInputArea>
+        
+             <PrivateUrlPlusButton onClick={trueOrFalse}>
+               확인
+             </PrivateUrlPlusButton>
+             </div>
+        </PrivateModalView>
+          </div>
+        
+          }
       {edit && 
       <ModalContainer>
         <ModalBackdrop onClick = {editCard}>
