@@ -1,9 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo,} from 'react';
 import * as AiIcons from 'react-icons/ai';
 import styled from 'styled-components';
 import * as BiIcons from 'react-icons/bi'
 import * as SiIcons from 'react-icons/si'
 import * as GiIcons from 'react-icons/gi'
+import { Link } from 'react-router-dom'
 
 
 export const UrlNavbar= memo(() => {
@@ -14,65 +15,86 @@ export const UrlNavbar= memo(() => {
     <Sidebar>
         {/* 여기는 sidebar 입니다 ! 딱히 수정 할 부분은 없을 것 같지만 혹여나 있다면 말씀해주세요 ! ㅎㅎ */}
       <MenuList>
+
+        <Link to = "/UrlPage" className= "link-router">
         <MenuItem>
-          <Link href="/UrlPage">
+          <LinkTo>
             <IconContainer>
             <AiIcons.AiFillHome />
             </IconContainer>
             <Label>전체보기</Label>
-          </Link>
+          </LinkTo>
         </MenuItem>
-
+        </Link>
+        
+        <Link to = "/UrlPage/games" className= "link-router">
         <MenuItem>
-          <Link href="/UrlPage/games">
+          <LinkTo >
             <IconContainer>
             <BiIcons.BiGame/>
             </IconContainer>
             <Label>Games</Label>
-          </Link>
+          </LinkTo>
         </MenuItem>
-
+          
+        </Link>
+        
+        <Link to = "/UrlPage/shopping" className= "link-router">
         <MenuItem>
-          <Link href="/UrlPage/shopping">
+          <LinkTo>
             <IconContainer>
              <AiIcons.AiOutlineShopping/>
             </IconContainer>
             <Label>Shopping</Label>
-          </Link>
+          </LinkTo>
         </MenuItem>
-
-        <MenuItem>
-          <Link href="/UrlPage/works">
+         </Link>
+        
+         <Link to = "/UrlPage/works" className= "link-router">
+         <MenuItem>
+          <LinkTo>
             <IconContainer>
             <SiIcons.SiCountingworkspro/>
             </IconContainer>
             <Label>Works</Label>
-          </Link>
+          </LinkTo>
         </MenuItem>
-        <MenuItem>
-          <Link href="/UrlPage/music">
+           </Link>
+
+          <Link to = "/UrlPage/music" className= "link-router">
+           <MenuItem>
+          <LinkTo >
             <IconContainer>
             <GiIcons.GiMusicalNotes/>
             </IconContainer>
             <Label>Music</Label>
+          </LinkTo>
+           </MenuItem>
           </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link href="/UrlPage/etc">
-            <IconContainer>
-            <BiIcons.BiDotsHorizontalRounded/>
-            </IconContainer>
-            <Label>Etc</Label>
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link href="/UrlPage/private">
-            <IconContainer>
-            <AiIcons.AiFillLock/>
-            </IconContainer>
-            <Label>Private</Label>
-          </Link>
-        </MenuItem>
+       
+        <Link to = "/UrlPage/etc" className= "link-router">
+          <MenuItem>
+            <LinkTo>
+              <IconContainer>
+              <BiIcons.BiDotsHorizontalRounded/>
+              </IconContainer>
+              <Label>Etc</Label>
+            </LinkTo>
+            </MenuItem>
+         </Link>
+        
+        
+        <Link to = "/UrlPage/private" className= "link-router">
+          <MenuItem>
+           <LinkTo>
+             <IconContainer>
+              <AiIcons.AiFillLock/>
+              </IconContainer>
+              <Label>Private</Label>
+             </LinkTo>
+           </MenuItem>
+      </Link>
+        
       </MenuList>
     </Sidebar>
   );
@@ -80,14 +102,15 @@ export const UrlNavbar= memo(() => {
 
 const Sidebar = styled.div`
   position: absolute;
-  width: 60px;
+  width: 240px;
   height: 100%;
   background: #1E6FD9;
   transition: 0.5s;
-  overflow: hidden;
+  /* overflow: hidden;
+  text-decoration: none;
   &:hover {
     width: 240px;
-  }
+  } */
 `;
 
 const MenuList = styled.ul`
@@ -97,6 +120,10 @@ const MenuList = styled.ul`
   left: 0;
   width: 100%;
   padding: 0;
+  text-decoration: none;
+  .link-router{
+    text-decoration: none;
+  }
 `;
 
 const IconContainer = styled.span`
@@ -112,18 +139,20 @@ const IconContainer = styled.span`
 `;
 
 
-const Link = styled.a`
+const LinkTo = styled.a`
   text-decoration: none;
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
+
 `;
 
 const MenuItem = styled.li`
   list-style: none;
   position: relative;
   width: 100%;
+
   &:hover {
     background: #90C4F8;
   }
@@ -138,6 +167,7 @@ const Label = styled.span`
   width: 60px;
   white-space: nowrap;
   color: white;
+
 `;
 
 export default UrlNavbar
