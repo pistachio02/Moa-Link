@@ -62,7 +62,7 @@
     height: 580px;
     max-width: 100%;
     padding: 20px; 
-    background-color: #6E1BC2;
+    background-color: #1E3BA8;
     color: #fff;
 }
 
@@ -73,14 +73,16 @@
 }
 
 .part2-main-title{
-    font-size: 1.5rem;
+    font-size: 2.3rem;
     padding: 1px;
     margin-top: 50px;
 }
 
-.part2-main-contents{
-    font-size: 1.2rem;
+.part2-sub-text{
+    font-size: 1.3rem;
+    padding-top: 30px ;
 }
+
 
 
 /* 아이콘 */
@@ -99,17 +101,21 @@
 .part2-img-icon{
     padding: 35px;
     margin-top: 30px;
-    margin: 0px 40px
+    margin: 0px 40px;
 }
 
 .i-one{
-    width: 200px;
-    height: 200px;
-    /* background-color: #1E3BA8; */
-    background-color: #0773F5;
+    font-size: 150px;
+    background-color: orange;
     border-radius: 50%;
+    padding: 50px;
 }
 
+.i-one:hover{
+    transform: rotate(15deg);
+    transition-duration: 1s;
+    background-color: #F55B9D;
+}
 
 /** part4 **/
 

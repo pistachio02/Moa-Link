@@ -7,25 +7,24 @@ function LandingPart2() {
           <div className="part2-background">
         <div className="part2-container">
             <div className="part2-main-text">
-                <h3 className="part2-main-title">This project is a landing page lol!!!lol!!!!!lol!!!!</h3>
-                <p className="part2-main-contents">핵심기능을 아래 케러셀로 하고 여기는 개요를 적는게 좋을까?</p>
+                <h3 className="part2-main-title">Moalink core service manages URLs.</h3>
             </div>
             <div className="part2-icon-background">
                 <div className="part2-icon-container">
                     <div className="part2-img-icon">
-                        <div className="i-one"></div>
-                        <h3>핵심기능1</h3>
-                        <p>핵심기능은 무엇일까요?</p>
+                        <i className="fas fa-share i-one"></i>
+                        <h3 className="part2-sub-text">Share</h3>
+                     
                     </div>
                     <div className="part2-img-icon">
-                        <div className="i-one"></div>
-                        <h3>핵심기능2</h3>
-                        <p>쑈쑈는 쌰쌰쌰 입니다.</p>
+                    <i className="fas fa-sort-amount-down i-one"></i>
+                        <h3 className="part2-sub-text">Shorten Url</h3>
+                    
                     </div>
                     <div className="part2-img-icon">
-                        <div className="i-one"></div>
-                        <h3>핵심기능3</h3>
-                        <p>착한아이처럼@@!#</p>
+                    <i className="fas fa-download i-one"></i>
+                        <h3 className="part2-sub-text">Management</h3>
+                     
                     </div>
                 </div>
             </div>
@@ -37,3 +36,4 @@ function LandingPart2() {
 }
 
 export default LandingPart2
+
