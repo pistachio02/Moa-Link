@@ -36,6 +36,7 @@ function SignModel() {
           { headers: { "Content-Type": "application/json" }}
         )
         .catch((err)=>console.log(err))
+        alert('축하합니다! 회원가입이 완료되었습니다!')
       history.push("/Login");
   
     };
