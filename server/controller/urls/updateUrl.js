@@ -24,10 +24,12 @@ module.exports = (req, res) => {
 
     if(!id || !url || !title || !description || !categoryId) {
         res.status(422).json({ message: "insufficient parameters supplied!" });
+        return;
     };
 
     if(!accessTokenData) {
         res.status(401).send({ data: null, message: 'not authorized' });
+        return;
     } else {
         Url
             .update({ 
