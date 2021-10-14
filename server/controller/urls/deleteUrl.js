@@ -8,6 +8,7 @@ module.exports = (req, res) => {
 
     if(!accessTokenData) {
         res.status(401).send({ data: null, message: 'not authorized' });
+        return;
     } else {
         Url
             .destroy({ where: { id } })

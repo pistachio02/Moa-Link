@@ -29,10 +29,12 @@ module.exports = async (req, res) => {
 
     if(!url || !title || !description || !category) {
         res.status(422).json({ message: "insufficient parameters supplied!" });
+        return;
     };
 
     if(!accessTokenData) {
         res.status(401).send({ data: null, message: 'not authorized' });
+        return;
     } else if(categoryId === 6) {
         const newUrl = await Url.create({ 
             url: url,
@@ -43,6 +45,7 @@ module.exports = async (req, res) => {
             userId: userId
         })
         res.status(201).json({ data: newUrl, message: "Successfully Added!" })
+        return;
     }
     else {
         const newUrl = await Url.create({ 
@@ -54,5 +57,6 @@ module.exports = async (req, res) => {
             userId: userId
         })
         res.status(201).json({ data: newUrl, message: "Successfully Added!" })
+        return;
     }
 };

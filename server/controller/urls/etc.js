@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
   const categoryId  = 5;
   if(!accessTokenData) {
     res.status(401).send({ data: null, message: 'not authorized' });
+    return;
   } else {
     await Url
         .findAll({ where: { userId: accessTokenData.id, categoryId: categoryId }})
