@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import {TextArea, TextInputArea, TextAreaWrap, ButtonWrap,  CancleButton, SubmitButton, ModalBackdrop, ModalContainer, ModalView,Card, PrivateModalView, PrivateTextInputArea, PrivateUrlPlusButton, UrlComponentWrap } from '../style/Styled'
-import * as BsIcons from 'react-icons/bs'
-import logo from '../../img/moalink.png'
+import React, { useState } from 'react'
+import {Card, PrivateModalView, PrivateTextInputArea, PrivateUrlPlusButton, UrlComponentWrap } from '../style/Styled'
 import * as BiIcons from 'react-icons/bi'
-import PlusButton from '../urlCardModalDev/PlusButton'
-import { useParams } from 'react-router';
 import axios from 'axios';
 import * as AiIcons from 'react-icons/ai'
 
 function Private() {
-    const [link, setLink] = useState('')
-    const [isTitle, setIsTitle] = useState('')
-    const [isDes, setIsDes] = useState('')
-    const [edit, setEdit] = useState(false)
-    const [isDelete, setIsDelete] = useState(false)
     const [urlList, setUrlList] =useState([]);
-    const {id, categoryId} = useParams()
     const [isPassword, setIsPassword] = useState('')
     const [isAccept, setIsAccept] = useState(false)
   
@@ -51,10 +41,7 @@ function Private() {
         }
     }
   
-  
-    const editCard = () => {
-      setEdit(!edit)
-    }
+
 
     return (
         <div>
@@ -65,14 +52,12 @@ function Private() {
             urlList.map((el) => (
 
               <Card>
-              <div className = 'icons'>
+          <div className = 'icons'>
               <BiIcons.BiTrash className = 'trash' key={el.id} onClick = {() => deleteHandler(el.id)}/>
-              <BiIcons.BiPencil className = 'pencil' onClick = {editCard}/>
               </div>
-              <div>{el.title}</div>
-                  <div>{el.description}</div>
-                  <a href = {el.url}>Url</a>
-
+              <div className = 'title'>{el.title}</div>
+                  <div className = 'des'>{el.description}</div>
+                  <div className = 'url' onClick = {() => window.open(`${el.url}`, '_blank')}>Move to Url !</div>
                  </Card>
                 ))}
             
@@ -92,31 +77,7 @@ function Private() {
           </div>
         
           }
-      {edit && 
-      <ModalContainer>
-        <ModalBackdrop onClick = {editCard}>
-          <ModalView  onClick={(e) => e.stopPropagation()}>
-          <BsIcons.BsArrowLeft onClick={editCard} className='cancle-arrow'/>
-            <img src = {logo} alt = "logo"/>
-            <TextAreaWrap>
-           
-          <TextInputArea placeholder = "URL을 입력해주세요" value={link}  onChange= {(e) => {setLink(e.target.value)}}></TextInputArea>
-           
-                <TextInputArea placeholder = "Title을 입력해주세요" value = {isTitle} onChange = {(e) => {setIsTitle(e.target.value)}} ></TextInputArea>
-                <TextArea placeholder= 'URL 상세 정보를 입력해 주세요' value = {isDes} onChange = {(e) => {setIsDes(e.target.value)}}></TextArea>
-            </TextAreaWrap>
-            <ButtonWrap>
-            <CancleButton onClick={editCard}>
-               Cancle
-            </CancleButton>
-            <SubmitButton onClick = {console.log()}>
-               Submit
-            </SubmitButton>
-            </ButtonWrap>
-          </ModalView>
-        </ModalBackdrop>
-      </ModalContainer>
-      }
+    
       
   </div>
     )

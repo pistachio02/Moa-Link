@@ -103,8 +103,8 @@ export const UrlNavbar= memo(() => {
 const Sidebar = styled.div`
   position: absolute;
   width: 240px;
-  height: 100%;
-  background: #1E6FD9;
+  height: 1000px;
+  background: #0094FF;
   transition: 0.5s;
   /* overflow: hidden;
   text-decoration: none;

@@ -13,7 +13,7 @@ import './UrlPage.css'
 
 function UrlPage({ userinfo, handleLogout }) {
     return (
-        <div>
+        <div className ='total'>
             <Header userinfo={userinfo} handleLogout={handleLogout} />
             <Router>
       <UrlNavbar/>
