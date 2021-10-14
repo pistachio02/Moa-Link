@@ -47,22 +47,43 @@ export const Card = styled.div`
   height: 150px;
   perspective: 500px;
   border-radius: 5px;
-  background-color: pink;
+  background-color: #0094FF;
+  opacity: 90%;
   &:hover{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 4px rgba(0, 0, 0, 0.2);
     transition: all;
   }
-  .p{
-    color: black;
+  .title{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .des{
+    color: #fff;
+    font-size: 11px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-right: 5px;
+  }
+  .url{
+    margin-left: 20px;
+    color: #fff;
+    opacity: 70%;
+    cursor: pointer;
+    :hover{
+      opacity: 100%;
+    }
   }
   .icons{
-    margin-left: 70%;
+    margin-left: 90%;
     cursor: pointer;
   }
   .trash{
     margin-top: 30%;
-    margin-right: 10px;
+    color: #fff;
   }
+
 `;
 
 
