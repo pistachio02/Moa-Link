@@ -24,6 +24,7 @@ function App() {
        .then((res)=>{
          setIsLogin(true);
          setUserinfo(res.data.data.userInfo)
+         alert('로그인이 완료되었습니다!')
          history.push('/');
        })
  };
@@ -34,6 +35,7 @@ function App() {
      .then(() => {
        setUserinfo(null);
        setIsLogin(false);
+       alert('로그아웃 하였습니다!')
        history.push('/');
      });
  };
@@ -46,7 +48,7 @@ function App() {
   useEffect(()=>{
     setTimeout(()=>{
       setReady(false)
-    },3000)
+    },2000)
   },[])
 
 
